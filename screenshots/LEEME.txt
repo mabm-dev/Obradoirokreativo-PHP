@@ -1,0 +1,24 @@
+CAPTURAS PARA EL README
+=======================
+
+Guarda aqui tus capturas con EXACTAMENTE estos nombres (formato .png):
+
+  portada.png          -> Pagina de inicio (index.php)
+  tienda.png           -> Pagina "Tienda" (galeria de categorias)
+  catalogo.png         -> Un catalogo de productos (p. ej. Pinturas y Pastas)
+  carrito.png          -> La cesta (cesta.php) con productos
+  pago.png             -> La pagina de pago de Stripe (o el boton Finalizar compra)
+  confirmacion.png     -> Pagina de confirmacion tras el pago
+  login.png            -> Inicio de sesion (Validacion.php)
+  registro.png         -> Formulario de registro
+  admin.png            -> Lista de usuarios (como administrador)
+  clases-talleres.png  -> Pagina "Clases y Talleres"
+  contacto.png         -> Pagina de contacto (con el mapa)
+  movil-menu.png       -> El menu desplegado en version movil
+
+Una vez guardadas, sube los cambios:
+  git add screenshots/
+  git commit -m "Anadir capturas de la web"
+  git push
+
+(Puedes borrar este archivo LEEME.txt cuando ya tengas las imagenes.)

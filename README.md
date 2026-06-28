@@ -82,15 +82,27 @@ para navegadores antiguos.
 
 ## 📸 Capturas
 
-| Portada | Catálogo | Carrito |
+### Inicio y tienda
+| Portada | Tienda | Catálogo de productos |
 |---|---|---|
-| ![Portada](screenshots/portada.png) | ![Catálogo](screenshots/catalogo.png) | ![Carrito](screenshots/carrito.png) |
+| ![Portada](screenshots/portada.png) | ![Tienda](screenshots/tienda.png) | ![Catálogo](screenshots/catalogo.png) |
 
-| Pago (Stripe) | Lista de usuarios (admin) | Móvil |
+### Compra (carrito y pago)
+| Carrito | Pago (Stripe) | Confirmación |
 |---|---|---|
-| ![Pago](screenshots/pago.png) | ![Admin](screenshots/admin.png) | ![Móvil](screenshots/movil.png) |
+| ![Carrito](screenshots/carrito.png) | ![Pago](screenshots/pago.png) | ![Confirmación](screenshots/confirmacion.png) |
 
-> Las imágenes van en la carpeta `screenshots/`.
+### Área de cliente y administración
+| Inicio de sesión | Registro | Lista de usuarios (admin) |
+|---|---|---|
+| ![Login](screenshots/login.png) | ![Registro](screenshots/registro.png) | ![Admin](screenshots/admin.png) |
+
+### Otras páginas y responsive
+| Clases y talleres | Contacto | Menú móvil |
+|---|---|---|
+| ![Clases y talleres](screenshots/clases-talleres.png) | ![Contacto](screenshots/contacto.png) | ![Menú móvil](screenshots/movil-menu.png) |
+
+> Las imágenes van en la carpeta `screenshots/` con esos mismos nombres.
 
 ## 📁 Estructura del repositorio
 
