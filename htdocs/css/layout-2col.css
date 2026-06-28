@@ -1,0 +1,20 @@
+/* ===========================================================
+   layout-2col.css  -  2 columnas (50% / 50%)
+   Responsive con CONTAINER QUERIES. Usado por: clasesytalleres
+   =========================================================== */
+#principal, #secundaria{
+	float: left;
+	width: 50%;
+	padding: clamp(10px, 1.6vw, 16px);
+	font-family: 'Montserrat', sans-serif;
+	font-size: clamp(1rem, 0.95rem + 0.35vw, 1.15rem);
+}
+
+@container principal (max-width: 640px){
+	#principal, #secundaria{ width: 100%; float: none; }
+}
+@supports not (container-type: inline-size){
+	@media screen and (max-width: 640px){
+		#principal, #secundaria{ width: 100%; float: none; }
+	}
+}

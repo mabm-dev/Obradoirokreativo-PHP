@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /Validacion.php
+Disallow: /cesta.php
+Disallow: /pedido.php
+Disallow: /cerrarSesion.php
+
+Sitemap: https://obradoirokreativo.infinityfree.io/sitemap.xml
