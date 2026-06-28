@@ -18,7 +18,7 @@ administración (CRUD) y un diseño responsive moderno.
 
 ## 🛍️ Vista general
 
-![Portada](screenshots/portada.png)
+![Portada](capturasreadme/inicio.png)
 
 Web completa y funcional: navegación, tienda, clases y talleres, contacto, área de
 cliente y panel de administrador. El foco está tanto en la **funcionalidad** (carrito,
@@ -48,72 +48,68 @@ pago, gestión) como en una **experiencia de usuario cuidada y profesional**.
 
 ## 🧩 Partes principales del trabajo
 
-### Diseño visual
-Paleta cálida (verde + crema + dorado), efecto *glassmorphism* (cristal esmerilado),
-micro-interacciones y animaciones sutiles.
-
-### Header y menú
-Menú de navegación con **pincelada de pintura animada**, indicador de sección activa,
-submenús desplegables y versión móvil tipo **acordeón** (hamburguesa).
-
-### Catálogo y carrito
-Listados por categorías con tablas estilizadas, **añadir al carrito por AJAX** con
-notificación *toast* (sin recargar) y carrito con panel de resumen (subtotal · envío ·
-total).
-
-### Pago
-Integración con **Stripe Checkout**: la sesión de pago se crea en el servidor y el cobro
-lo gestiona Stripe (nunca se manejan datos de tarjeta). Página de confirmación tras el
-pago.
-
-### Administración
-Panel de administrador con **CRUD** de usuarios y artículos (alta, edición y baja), con
-estados y acciones claras.
-
-### Seguridad (backend)
-- **Consultas preparadas** en todas las consultas (anti SQL-injection).
-- Contraseñas con **`password_hash()` (bcrypt)** y migración automática desde el formato
-  antiguo.
-- Listas blancas en los `ORDER BY`.
-
-### Responsive
-Sistema moderno con **Container Queries** y **`clamp()`** (tamaños fluidos), con respaldo
-para navegadores antiguos.
+- **Diseño visual**: paleta cálida (verde + crema + dorado), *glassmorphism*,
+  micro-interacciones y animaciones sutiles.
+- **Header y menú**: pincelada de pintura animada, indicador de sección activa, submenús
+  y versión móvil tipo acordeón.
+- **Catálogo y carrito**: listados por categorías, **añadir al carrito por AJAX** con
+  notificación *toast* y carrito con panel de resumen (subtotal · envío · total).
+- **Pago**: integración con **Stripe Checkout** (el cobro lo gestiona Stripe; nunca se
+  manejan datos de tarjeta) y página de confirmación.
+- **Administración**: panel con **CRUD** de usuarios y artículos.
+- **Seguridad**: consultas preparadas (anti SQL-injection), contraseñas con
+  `password_hash()` (bcrypt) y migración automática, listas blancas en `ORDER BY`.
+- **Responsive**: sistema moderno con **Container Queries** y **`clamp()`**.
 
 ## 📸 Capturas
 
-### Inicio y tienda
-| Portada | Tienda | Catálogo de productos |
+### Inicio
+| Portada | Escaparate (React) | Cabecera y menú |
 |---|---|---|
-| ![Portada](screenshots/portada.png) | ![Tienda](screenshots/tienda.png) | ![Catálogo](screenshots/catalogo.png) |
+| ![Portada](capturasreadme/inicio.png) | ![Escaparate](capturasreadme/inicioreact.png) | ![Menú](capturasreadme/headermenu.png) |
 
-### Compra (carrito y pago)
-| Carrito | Pago (Stripe) | Confirmación |
+| Cabecera | Pie de página |
+|---|---|
+| ![Cabecera](capturasreadme/header.png) | ![Footer](capturasreadme/footer.png) |
+
+### Tienda y compra
+| Catálogo de productos | Cesta | Pago (Stripe) |
 |---|---|---|
-| ![Carrito](screenshots/carrito.png) | ![Pago](screenshots/pago.png) | ![Confirmación](screenshots/confirmacion.png) |
+| ![Catálogo](capturasreadme/listaproductos.png) | ![Cesta](capturasreadme/finalizar-compra.png) | ![Pago](capturasreadme/checkout.png) |
 
-### Área de cliente y administración
-| Inicio de sesión | Registro | Lista de usuarios (admin) |
+| Método de pago | Resumen de la compra |
+|---|---|
+| ![Método de pago](capturasreadme/metododepago.png) | ![Compra](capturasreadme/sesion.png) |
+
+### Área de cliente
+| Inicio de sesión | Registro | Contacto |
 |---|---|---|
-| ![Login](screenshots/login.png) | ![Registro](screenshots/registro.png) | ![Admin](screenshots/admin.png) |
+| ![Login](capturasreadme/iniciarsesion.png) | ![Registro](capturasreadme/formularioregistro.png) | ![Contacto](capturasreadme/contacto.png) |
 
-### Otras páginas y responsive
-| Clases y talleres | Contacto | Menú móvil |
+### Panel de administración
+| Lista de usuarios | Modificar usuario |
+|---|---|
+| ![Usuarios](capturasreadme/adminusers.png) | ![Modificar usuario](capturasreadme/adminusersmodifica.png) |
+
+| Gestión de productos | Modificar producto | Añadir producto |
 |---|---|---|
-| ![Clases y talleres](screenshots/clases-talleres.png) | ![Contacto](screenshots/contacto.png) | ![Menú móvil](screenshots/movil-menu.png) |
+| ![Productos](capturasreadme/adminproductos.png) | ![Modificar producto](capturasreadme/adminproductomodifica.png) | ![Añadir producto](capturasreadme/añadirproducto.png) |
 
-> Las imágenes van en la carpeta `screenshots/` con esos mismos nombres.
+### Responsive
+| Vista tablet | Menú móvil | Menú móvil (selección) |
+|---|---|---|
+| ![Tablet](capturasreadme/tabletinicio.png) | ![Menú móvil](capturasreadme/movilmenu.png) | ![Menú móvil selección](capturasreadme/movilmenuseleccion.png) |
 
 ## 📁 Estructura del repositorio
 
 ```
 htdocs/
-  css/            Hojas por secciones (base, menu, cabecera, pie, layouts, tablas...)
-  js/             JavaScript (menú, carrito AJAX, validaciones)
-  templates/      Plantillas PHP reutilizables (inicioPagina, finPagina, nav, ...)
-  img/            Imágenes
-  *.php           Páginas (index, tienda, catálogos, cesta, pago, admin, ...)
-screenshots/      Capturas de la web
+  css/             Hojas por secciones (base, menu, cabecera, pie, layouts, tablas...)
+  js/              JavaScript (menú, carrito AJAX, validaciones)
+  templates/       Plantillas PHP reutilizables (inicioPagina, finPagina, nav, ...)
+  img/             Imágenes de la web
+  *.php            Páginas (index, tienda, catálogos, cesta, pago, admin, ...)
+capturasreadme/    Capturas usadas en este README
 README.md
 ```
 
