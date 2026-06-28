@@ -1,0 +1,196 @@
+/* ===========================================================
+   carrusel.css  -  Carrusel scroll-snap, video y escaparate React
+   Usado por: index, tienda, contacto, clasesytalleres
+   =========================================================== */
+
+/* ----- Carrusel moderno (CSS scroll-snap) ----- */
+.carrusel-wrap{
+	position: relative;
+	max-width: 920px;
+	margin: 24px auto 30px;
+	padding: 0 clamp(0px, 1vw, 8px);
+}
+.carrusel-pista{
+	display: flex;
+	gap: 16px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	padding: 8px 6px 16px;
+	scrollbar-width: none;              /* Firefox */
+	-ms-overflow-style: none;
+}
+.carrusel-pista::-webkit-scrollbar{ display: none; }   /* Chrome / Safari */
+
+.carrusel-item{
+	flex: 0 0 clamp(190px, 42%, 240px);
+	scroll-snap-align: center;
+	box-sizing: border-box;
+	background: linear-gradient(135deg, rgba(255, 250, 242, 0.9), rgba(242, 214, 216, 0.4));
+	border: 1px solid rgba(217, 183, 163, 0.5);
+	border-radius: 16px;
+	padding: 14px;
+	text-align: center;
+	box-shadow: 0 8px 20px rgba(47, 85, 54, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.carrusel-item:hover{
+	transform: translateY(-5px);
+	box-shadow: 0 14px 28px rgba(47, 85, 54, 0.18);
+}
+.carrusel-item--promo{
+	background: linear-gradient(135deg, rgba(159, 208, 192, 0.35), rgba(242, 214, 216, 0.5));
+}
+.carrusel-img{
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: 12px;
+	overflow: hidden;
+	background: #fff;
+	border: 1px solid rgba(217, 183, 163, 0.5);
+}
+.carrusel-img img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.4s ease;
+}
+.carrusel-item:hover .carrusel-img img{ transform: scale(1.07); }
+.carrusel-item h4{
+	margin: 12px 0 4px;
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 1.25rem;
+	line-height: 1.15;
+	color: #2f5536;
+}
+.carrusel-precio{
+	display: inline-block;
+	font-weight: 600;
+	font-size: 0.9rem;
+	color: #8b6f3d;
+}
+
+/* Flechas */
+.carrusel-flecha{
+	position: absolute;
+	top: 42%;
+	transform: translateY(-50%);
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	border: 1px solid rgba(199, 169, 107, 0.5);
+	background: rgba(47, 85, 54, 0.92);
+	color: #fffaf2;
+	font-size: 1.05rem;
+	cursor: pointer;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 6px 16px rgba(31, 61, 38, 0.25);
+	transition: background 0.25s ease, transform 0.25s ease;
+}
+.carrusel-flecha:hover{ background: #1f3d26; transform: translateY(-50%) scale(1.08); }
+.carrusel-flecha.izq{ left: -6px; }
+.carrusel-flecha.dcha{ right: -6px; }
+
+@media screen and (max-width: 600px){
+	.carrusel-item{ flex-basis: 78%; }
+	.carrusel-flecha{ width: 38px; height: 38px; }
+}
+
+/* ----- Video de YouTube (portada) ----- */
+#content #principal article .videoYoutube{
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	margin: 0 0 18px 0;
+	overflow: hidden;
+}
+#content #principal article .videoYoutube iframe{
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+/* ----- Escaparate interactivo (React, portada) ----- */
+.escaparateReact{
+	clear: both;
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 24px;
+	align-items: center;
+	margin: 30px 0;
+	padding: 24px;
+	background: #f6f3ed;
+	border: 1px solid #d8cdb8;
+	border-radius: 16px;
+	font-family: 'Montserrat', sans-serif;
+}
+.escaparateTexto h2{
+	text-align: left;
+	margin: 4px 0 12px;
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 2.1rem;
+	color: #2f5536;
+}
+.escaparateTexto p{ line-height: 1.6; }
+.escaparateEtiqueta{
+	text-transform: uppercase;
+	font-size: 0.78rem;
+	letter-spacing: 0.08em;
+	color: #8b6f3d;
+	font-weight: 600;
+	margin: 0;
+}
+.escaparateBoton{
+	display: inline-block;
+	margin-top: 8px;
+	padding: 11px 18px;
+	background: #2f5536;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	border-radius: 999px;
+}
+.escaparateBoton:hover{ background: #1f3d26; color: #fff; }
+.escaparateImagen img{
+	width: 100%;
+	height: 240px;
+	object-fit: cover;
+	display: block;
+	border-radius: 12px;
+}
+.escaparateTabs{
+	grid-column: 1 / -1;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.escaparateTabs button{
+	border: 1px solid #c8b98f;
+	background: #fff;
+	color: #2f5536;
+	padding: 9px 12px;
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
+	border-radius: 999px;
+}
+.escaparateTabs button.activo,
+.escaparateTabs button:hover{
+	background: #2f5536;
+	color: #fff;
+}
+
+/* El escaparate y el carrusel se adaptan al ancho del contenedor */
+@container principal (max-width: 700px){
+	.escaparateReact{ grid-template-columns: 1fr; padding: clamp(14px, 4vw, 18px); }
+	.escaparateImagen img{ height: 190px; }
+}
+@supports not (container-type: inline-size){
+	@media screen and (max-width: 700px){
+		.escaparateReact{ grid-template-columns: 1fr; padding: 18px; }
+		.escaparateImagen img{ height: 190px; }
+	}
+}

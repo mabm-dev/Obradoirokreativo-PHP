@@ -1,0 +1,185 @@
+/* ===========================================================
+   menu.css  -  Barra de navegacion "obra de arte"
+   Cristal esmerilado + pincelada de pintura animada bajo cada
+   opcion + indicador de seccion activa. Comun a todas las paginas.
+   =========================================================== */
+nav{
+	position: relative;
+	width: 100%;
+	z-index: 1000;
+	background: linear-gradient(120deg, rgba(40, 66, 45, 0.93), rgba(53, 94, 59, 0.9));
+	-webkit-backdrop-filter: blur(12px) saturate(1.25);
+	backdrop-filter: blur(12px) saturate(1.25);
+	border-bottom: 1px solid rgba(199, 169, 107, 0.45);
+	box-shadow: 0 8px 26px rgba(31, 61, 38, 0.28);
+}
+/* Hilo de color animado en el borde superior */
+nav::before{
+	content: "";
+	position: absolute;
+	top: 0; left: 0; right: 0;
+	height: 3px;
+	background: linear-gradient(90deg, #c7a96b, #f2d6d8, #9fd0c0, #c7a96b);
+	background-size: 300% 100%;
+	animation: navShimmer 9s linear infinite;
+}
+@keyframes navShimmer{ to { background-position: 300% 0; } }
+
+nav::after{ content: ""; display: block; clear: both; }
+
+#navbar > ul{
+	list-style: none;
+	margin: 0;
+	padding: 0 6px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+nav li{
+	position: relative;
+	float: none;
+	font-family: 'Montserrat', sans-serif;
+}
+/* Empuja la cuenta/carrito a la derecha */
+nav li.nav-cuenta:first-of-type{ margin-left: auto; }
+
+/* ----- Enlaces ----- */
+nav li a.nav-link,
+nav li > a{
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	color: #eef2e6;
+	font-size: 0.98rem;
+	font-weight: 500;
+	letter-spacing: 0.015em;
+	text-decoration: none;
+	padding: clamp(16px, 2.2vw, 22px) clamp(13px, 1.5vw, 20px) clamp(18px, 2.4vw, 24px);
+	background: transparent;
+	transition: color 0.25s ease, transform 0.25s ease;
+}
+nav li a .fa{
+	font-size: 1.05em;
+	color: #c7a96b;
+	transition: transform 0.3s ease, color 0.25s ease;
+}
+/* Pincelada de pintura que se dibuja bajo la opcion */
+nav li > a.nav-link::after{
+	content: "";
+	position: absolute;
+	left: 14px; right: 14px;
+	bottom: 9px;
+	height: 13px;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 22' preserveAspectRatio='none'%3E%3Cpath d='M4,11 C36,3 70,16 104,9 C140,2 168,14 196,8 C170,19 138,9 104,15 C72,20 36,9 4,11 Z' fill='%23ecc0c6'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+	transform: scaleX(0);
+	transform-origin: left center;
+	opacity: 0.9;
+	transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+	pointer-events: none;
+}
+nav li > a.nav-link:hover{ color: #ffffff; transform: translateY(-1px); }
+nav li > a.nav-link:hover .fa{ transform: translateY(-2px) rotate(-6deg); color: #f2d6d8; }
+nav li > a.nav-link:hover::after{ transform: scaleX(1); }
+
+/* ----- Seccion activa ----- */
+nav li > a.nav-link.activo{ color: #ffffff; }
+nav li > a.nav-link.activo .fa{ color: #f2d6d8; }
+nav li > a.nav-link.activo::after{ transform: scaleX(1); opacity: 1; }
+
+/* Carrito: un poco mas destacado */
+nav li.nav-cesta a .fa{ font-size: 1.2em; }
+
+/* ----- Submenu desplegable (animado) ----- */
+nav li ul{
+	list-style: none;
+	margin: 0;
+	padding: 6px;
+	position: absolute;
+	top: 100%;
+	left: 8px;
+	min-width: 210px;
+	z-index: 1001;
+	background: rgba(255, 250, 242, 0.92);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(199, 169, 107, 0.4);
+	border-top: 3px solid #c7a96b;
+	border-radius: 0 0 14px 14px;
+	box-shadow: 0 16px 30px rgba(31, 61, 38, 0.22);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(12px);
+	transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
+}
+nav li:hover > ul{ opacity: 1; visibility: visible; transform: translateY(0); }
+
+nav li ul li{ width: 100%; }
+nav li ul li a{
+	display: block;
+	padding: 12px 16px;
+	color: #2f5536;
+	font-size: 0.92rem;
+	font-weight: 500;
+	text-decoration: none;
+	border-radius: 9px;
+	transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+nav li ul li a:hover{
+	background: linear-gradient(90deg, rgba(242, 214, 216, 0.85), rgba(159, 208, 192, 0.4));
+	color: #1f3d26;
+	padding-left: 22px;
+}
+
+/* Icono hamburguesa (oculto en escritorio) */
+.myicono{
+	font-size: 1.3em;
+	color: #fffaf2;
+	display: none;
+	cursor: pointer;
+}
+
+/* ----- Responsive ----- */
+@media screen and (max-width: 820px){
+	.myicono{ display: block; padding: 18px 22px; }
+	.myicono:hover{ color: #c7a96b; }
+	/* Menu oculto por defecto en movil; se abre con la hamburguesa (clase menu-abierto) */
+	#navbar > ul{ display: none; flex-direction: column; align-items: stretch; padding: 0; }
+	#navbar.menu-abierto > ul{ display: flex; }
+	#navbar li{ width: 100%; }
+	nav li.nav-cuenta:first-of-type{ margin-left: 0; }
+	nav li > a.nav-link{ padding: 16px 22px; }
+	nav li > a.nav-link::after{ display: none; }
+	/* Submenus ocultos; se despliegan en acordeon al tocar el apartado */
+	nav li ul{
+		display: none;
+		position: static;
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+		min-width: 0;
+		border-radius: 0;
+		box-shadow: none;
+		background: rgba(0, 0, 0, 0.18);
+		border-top: none;
+	}
+	nav li.submenu-abierto > ul{ display: block; }
+	nav li ul li a{ color: #eef2e6; padding-left: 44px; }
+	nav li ul li a:hover{ color: #fffaf2; }
+	/* Flecha indicadora en los apartados que tienen submenu */
+	nav li:has(> ul) > a.nav-link::after{
+		display: inline-block;
+		content: "\f107";              /* chevron-down de Font Awesome */
+		font-family: 'FontAwesome';
+		position: static;
+		left: auto; right: auto; bottom: auto;
+		width: auto; height: auto;
+		margin-left: auto;
+		background: none;
+		opacity: 1;
+		transform: none;
+		color: #c7a96b;
+		transition: transform 0.25s ease;
+	}
+	nav li.submenu-abierto:has(> ul) > a.nav-link::after{ transform: rotate(180deg); }
+}
