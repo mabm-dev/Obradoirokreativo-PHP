@@ -101,17 +101,11 @@ La integracion con Stripe Checkout esta preparada/en desarrollo para modo test. 
 
 ![Catalogo de productos](screenshots/lista-productos.png)
 
-### Cesta
-
-![Cesta](screenshots/finalizar-compra.png)
 
 ### Metodo de pago
 
 ![Metodo de pago](screenshots/metodo-pago.png)
 
-### Checkout
-
-![Checkout](screenshots/checkout.png)
 
 ### Area de cliente
 
@@ -190,8 +184,6 @@ Obradoirokreativo-PHP/
    ├─ inicio-react.png
    ├─ header-menu.png
    ├─ lista-productos.png
-   ├─ finalizar-compra.png
-   ├─ checkout.png
    ├─ contacto.png
    └─ movil-menu.png
 ```
