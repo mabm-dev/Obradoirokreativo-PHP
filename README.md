@@ -8,17 +8,17 @@
 
 Tienda online desarrollada **desde cero con PHP y MySQL** (sin framework) para una
 tienda-taller de manualidades. Incluye catálogo por categorías, registro e inicio de
-sesión seguros, carrito de compra con AJAX, pasarela de pago **Stripe**, panel de
+sesión seguros, carrito de compra con AJAX, integración de pago **Stripe en modo test/en desarrollo**, panel de
 administración (CRUD) y un diseño responsive moderno.
 
-> ⚠️ **Proyecto formativo / demostración.** Los pagos usan **Stripe en modo test** (no se
-> cobra dinero real). Tarjeta de prueba: `4242 4242 4242 4242`.
+> ⚠️ **Proyecto formativo / demostración.** La integración con **Stripe en modo test** está preparada/en desarrollo.
+> Cuando esté activa, no cobrará dinero real y usará tarjetas de prueba de Stripe.
 
 ---
 
 ## 🛍️ Vista general
 
-![Portada](capturasreadme/inicio.png)
+![Portada](screenshot/inicio.png)
 
 Web completa y funcional: navegación, tienda, clases y talleres, contacto, área de
 cliente y panel de administrador. El foco está tanto en la **funcionalidad** (carrito,
@@ -43,7 +43,7 @@ pago, gestión) como en una **experiencia de usuario cuidada y profesional**.
 | Backend | PHP (sin framework), MySQL (mysqli + **consultas preparadas**) |
 | Frontend | HTML5, CSS3 modular, JavaScript (jQuery puntual + JS nativo) |
 | Interactividad | **React 18** (escaparate de la portada) |
-| Pago | **Stripe Checkout** (modo test, vía API REST con cURL) |
+| Pago | **Stripe Checkout** preparado para modo test (integración en desarrollo) |
 | Otros | Bootstrap, Font Awesome |
 
 ## 🧩 Partes principales del trabajo
@@ -54,8 +54,7 @@ pago, gestión) como en una **experiencia de usuario cuidada y profesional**.
   y versión móvil tipo acordeón.
 - **Catálogo y carrito**: listados por categorías, **añadir al carrito por AJAX** con
   notificación *toast* y carrito con panel de resumen (subtotal · envío · total).
-- **Pago**: integración con **Stripe Checkout** (el cobro lo gestiona Stripe; nunca se
-  manejan datos de tarjeta) y página de confirmación.
+- **Pago**: integración con **Stripe Checkout** preparada para modo test. El objetivo es delegar el cobro en Stripe para no manejar datos de tarjeta en la web.
 - **Administración**: panel con **CRUD** de usuarios y artículos.
 - **Seguridad**: consultas preparadas (anti SQL-injection), contraseñas con
   `password_hash()` (bcrypt) y migración automática, listas blancas en `ORDER BY`.
@@ -66,50 +65,50 @@ pago, gestión) como en una **experiencia de usuario cuidada y profesional**.
 ### Inicio
 | Portada | Escaparate (React) | Cabecera y menú |
 |---|---|---|
-| ![Portada](capturasreadme/inicio.png) | ![Escaparate](capturasreadme/inicioreact.png) | ![Menú](capturasreadme/headermenu.png) |
+| ![Portada](screenshot/inicio.png) | ![Escaparate](screenshot/inicioreact.png) | ![Menú](screenshot/headermenu.png) |
 
 | Cabecera | Pie de página |
 |---|---|
-| ![Cabecera](capturasreadme/header.png) | ![Footer](capturasreadme/footer.png) |
+| ![Cabecera](screenshot/header.png) | ![Footer](screenshot/footer.png) |
 
 ### Tienda y compra
 | Catálogo de productos | Cesta | Pago (Stripe) |
 |---|---|---|
-| ![Catálogo](capturasreadme/listaproductos.png) | ![Cesta](capturasreadme/finalizar-compra.png) | ![Pago](capturasreadme/checkout.png) |
+| ![Catálogo](screenshot/listaproductos.png) | ![Cesta](screenshot/finalizar-compra.png) | ![Pago](screenshot/checkout.png) |
 
 | Método de pago | Resumen de la compra |
 |---|---|
-| ![Método de pago](capturasreadme/metododepago.png) | ![Compra](capturasreadme/sesion.png) |
+| ![Método de pago](screenshot/metododepago.png) | ![Compra](screenshot/sesion.png) |
 
 ### Área de cliente
 | Inicio de sesión | Registro | Contacto |
 |---|---|---|
-| ![Login](capturasreadme/iniciarsesion.png) | ![Registro](capturasreadme/formularioregistro.png) | ![Contacto](capturasreadme/contacto.png) |
+| ![Login](screenshot/iniciarsesion.png) | ![Registro](screenshot/formularioregistro.png) | ![Contacto](screenshot/contacto.png) |
 
 ### Panel de administración
 | Lista de usuarios | Modificar usuario |
 |---|---|
-| ![Usuarios](capturasreadme/adminusers.png) | ![Modificar usuario](capturasreadme/adminusersmodifica.png) |
+| ![Usuarios](screenshot/adminusers.png) | ![Modificar usuario](screenshot/adminusersmodifica.png) |
 
 | Gestión de productos | Modificar producto | Añadir producto |
 |---|---|---|
-| ![Productos](capturasreadme/adminproductos.png) | ![Modificar producto](capturasreadme/adminproductomodifica.png) | ![Añadir producto](capturasreadme/añadirproducto.png) |
+| ![Productos](screenshot/adminproductos.png) | ![Modificar producto](screenshot/adminproductomodifica.png) | ![Añadir producto](screenshot/añadirproducto.png) |
 
 ### Responsive
 | Vista tablet | Menú móvil | Menú móvil (selección) |
 |---|---|---|
-| ![Tablet](capturasreadme/tabletinicio.png) | ![Menú móvil](capturasreadme/movilmenu.png) | ![Menú móvil selección](capturasreadme/movilmenuseleccion.png) |
+| ![Tablet](screenshot/tabletinicio.png) | ![Menú móvil](screenshot/movilmenu.png) | ![Menú móvil selección](screenshot/movilmenuseleccion.png) |
 
 ## 📁 Estructura del repositorio
 
 ```
-htdocs/
+code/
   css/             Hojas por secciones (base, menu, cabecera, pie, layouts, tablas...)
   js/              JavaScript (menú, carrito AJAX, validaciones)
   templates/       Plantillas PHP reutilizables (inicioPagina, finPagina, nav, ...)
   img/             Imágenes de la web
   *.php            Páginas (index, tienda, catálogos, cesta, pago, admin, ...)
-capturasreadme/    Capturas usadas en este README
+screenshot/       Capturas usadas en este README
 README.md
 ```
 
@@ -118,13 +117,13 @@ README.md
 1. Clona el repositorio.
 2. Copia las plantillas de configuración y rellénalas:
    ```bash
-   cp htdocs/config.example.php htdocs/config.php
-   cp htdocs/configStripe.example.php htdocs/configStripe.php
+   cp code/config.example.php code/config.php
+   cp code/configStripe.example.php code/configStripe.php
    ```
 3. Crea la base de datos e importa las tablas (`user`, `articulo`, `carritodecompra`, `pedido`).
-4. Sirve la carpeta `htdocs/` con un servidor PHP (Apache/XAMPP o `php -S`).
+4. Sirve la carpeta `code/` con un servidor PHP (Apache/XAMPP o `php -S`).
 
-> Para que el **pago con Stripe** funcione, el servidor debe permitir conexiones salientes
+> Para activar **Stripe**, el servidor debe permitir conexiones salientes
 > a `api.stripe.com` (el hosting gratuito de InfinityFree las bloquea; usa un hosting que
 > las permita, como Render o Railway).
 

@@ -1,6 +1,6 @@
 # ===== Secretos / configuracion local (NUNCA subir) =====
-htdocs/config.php
-htdocs/configStripe.php
+code/config.php
+code/configStripe.php
 
 # ===== Copias de seguridad y temporales =====
 *.bak
@@ -8,14 +8,18 @@ htdocs/configStripe.php
 *.tmp
 
 # ===== Archivos del IDE Eclipse =====
-htdocs/.project
-htdocs/.buildpath
-htdocs/.settings/
+code/.project
+code/.buildpath
+code/.settings/
 
 # ===== Miniaturas / basura del sistema =====
 **/photothumb.db
 **/Thumbs.db
 **/.DS_Store
 
-# ===== Config propia de InfinityFree (no es de la web) =====
+# ===== Config propia de InfinityFree =====
 .override
+.htaccess
+
+# ===== Pruebas locales =====
+code/test.php
