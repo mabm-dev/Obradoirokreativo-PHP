@@ -18,7 +18,7 @@ administración (CRUD) y un diseño responsive moderno.
 
 ## 🛍️ Vista general
 
-![Portada](screenshot/inicio.png)
+![Escaparate React](screenshot/inicioreact.png)
 
 Web completa y funcional: navegación, tienda, clases y talleres, contacto, área de
 cliente y panel de administrador. El foco está tanto en la **funcionalidad** (carrito,
@@ -63,13 +63,13 @@ pago, gestión) como en una **experiencia de usuario cuidada y profesional**.
 ## 📸 Capturas
 
 ### Inicio
-| Portada | Escaparate (React) | Cabecera y menú |
+| Escaparate React | Cabecera y menú | Cabecera |
 |---|---|---|
-| ![Portada](screenshot/inicio.png) | ![Escaparate](screenshot/inicioreact.png) | ![Menú](screenshot/headermenu.png) |
+| ![Escaparate React](screenshot/inicioreact.png) | ![Menú](screenshot/headermenu.png) | ![Cabecera](screenshot/header.png) |
 
-| Cabecera | Pie de página |
-|---|---|
-| ![Cabecera](screenshot/header.png) | ![Footer](screenshot/footer.png) |
+| Pie de página |
+|---|
+| ![Footer](screenshot/footer.png) |
 
 ### Tienda y compra
 | Catálogo de productos | Cesta | Pago (Stripe) |
