@@ -96,56 +96,17 @@ La integracion con Stripe Checkout esta preparada/en desarrollo para modo test. 
 
 ![Cabecera y menu](screenshots/header-menu.png)
 
-
 ### Catalogo de productos
 
 ![Catalogo de productos](screenshots/lista-productos.png)
-
-
-### Metodo de pago
-
-![Metodo de pago](screenshots/metodo-pago.png)
-
-
-### Area de cliente
-
-![Inicio de sesion](screenshots/iniciar-sesion.png)
-
-### Registro
-
-![Registro](screenshots/formulario-registro.png)
 
 ### Contacto
 
 ![Contacto](screenshots/contacto.png)
 
-### Panel de administracion - usuarios
-
-![Panel de usuarios](screenshots/admin-usuarios.png)
-
-### Panel de administracion - productos
-
-![Panel de productos](screenshots/admin-productos.png)
-
-### Anadir producto
-
-![Anadir producto](screenshots/anadir-producto.png)
-
-### Responsive tablet
-
-![Responsive tablet](screenshots/tablet-inicio.png)
-
 ### Menu movil
 
 ![Menu movil](screenshots/movil-menu.png)
-
-### Menu movil desplegado
-
-![Menu movil desplegado](screenshots/movil-menu-seleccion.png)
-
-### Footer
-
-![Footer](screenshots/footer.png)
 
 ## Estructura del repositorio
 
