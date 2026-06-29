@@ -96,9 +96,6 @@ La integracion con Stripe Checkout esta preparada/en desarrollo para modo test. 
 
 ![Cabecera y menu](screenshots/header-menu.png)
 
-### Cabecera
-
-![Cabecera](screenshots/header.png)
 
 ### Catalogo de productos
 
