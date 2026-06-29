@@ -1,134 +1,232 @@
-# Obradoiro Kreativo — Tienda online a medida (PHP · MySQL · Stripe)
+# Obradoiro Kreativo - Tienda online a medida con PHP y MySQL
 
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white)
+Proyecto de desarrollo web de una tienda online creada desde cero con PHP y MySQL para una marca de manualidades, creatividad y formacion artesanal.
 
-Tienda online desarrollada **desde cero con PHP y MySQL** (sin framework) para una
-tienda-taller de manualidades. Incluye catálogo por categorías, registro e inicio de
-sesión seguros, carrito de compra con AJAX, integración de pago **Stripe en modo test/en desarrollo**, panel de
-administración (CRUD) y un diseño responsive moderno.
+El objetivo del proyecto fue construir una version a medida de una tienda online, trabajando la logica propia de catalogo, usuarios, carrito, panel de administracion, estructura modular, seguridad basica y una interfaz visual coherente con la identidad de Obradoiro Kreativo.
 
-> ⚠️ **Proyecto formativo / demostración.** La integración con **Stripe en modo test** está preparada/en desarrollo.
-> Cuando esté activa, no cobrará dinero real y usará tarjetas de prueba de Stripe.
+## Vista general
 
----
+![Escaparate React](screenshots/inicio-react.png)
 
-## 🛍️ Vista general
+## Que incluye este repositorio
 
-![Escaparate React](screenshot/inicioreact.png)
+Este repositorio contiene una aplicacion PHP organizada como portfolio tecnico. Esta preparado para mostrar el trabajo realizado de forma clara y segura, sin publicar credenciales ni datos privados.
 
-Web completa y funcional: navegación, tienda, clases y talleres, contacto, área de
-cliente y panel de administrador. El foco está tanto en la **funcionalidad** (carrito,
-pago, gestión) como en una **experiencia de usuario cuidada y profesional**.
+Incluye:
 
-## 📦 Qué incluye este repositorio
+- Codigo fuente PHP de la tienda.
+- Conexion MySQL mediante archivo de configuracion externo.
+- CSS modular por zonas de la interfaz.
+- JavaScript para carrusel, validaciones e interacciones.
+- Escaparate interactivo con React 18.
+- Formularios de registro, login, carrito y administracion.
+- Plantillas reutilizables para cabecera, menu, carrusel y footer.
+- Capturas optimizadas del resultado final.
+- Documentacion tecnica del proyecto.
 
-**Incluye:**
-- Todo el **código fuente** de la web (PHP, CSS por secciones, JavaScript).
-- Plantillas reutilizables y arquitectura modular.
-- Plantillas de configuración (`config.example.php`, `configStripe.example.php`).
+No incluye:
 
-**NO incluye (por seguridad):**
-- Credenciales de la base de datos (`config.php`).
-- Claves de Stripe (`configStripe.php`).
-- Copias de seguridad, archivos del IDE ni datos privados.
+- Credenciales reales de base de datos.
+- Claves reales de Stripe.
+- Datos reales de clientes o pedidos.
+- Copias de seguridad privadas.
+- Archivos propios del hosting gratuito.
+- Configuraciones locales privadas.
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologias utilizadas
 
-| Área | Tecnología |
-|---|---|
-| Backend | PHP (sin framework), MySQL (mysqli + **consultas preparadas**) |
-| Frontend | HTML5, CSS3 modular, JavaScript (jQuery puntual + JS nativo) |
-| Interactividad | **React 18** (escaparate de la portada) |
-| Pago | **Stripe Checkout** preparado para modo test (integración en desarrollo) |
-| Otros | Bootstrap, Font Awesome |
+- PHP sin framework.
+- MySQL con mysqli.
+- HTML5.
+- CSS3 modular.
+- JavaScript nativo.
+- jQuery puntual para interacciones existentes.
+- React 18 para el escaparate de portada.
+- Bootstrap.
+- Font Awesome.
+- Stripe Checkout preparado para integracion en modo test.
 
-## 🧩 Partes principales del trabajo
+## Partes principales del trabajo
 
-- **Diseño visual**: paleta cálida (verde + crema + dorado), *glassmorphism*,
-  micro-interacciones y animaciones sutiles.
-- **Header y menú**: pincelada de pintura animada, indicador de sección activa, submenús
-  y versión móvil tipo acordeón.
-- **Catálogo y carrito**: listados por categorías, **añadir al carrito por AJAX** con
-  notificación *toast* y carrito con panel de resumen (subtotal · envío · total).
-- **Pago**: integración con **Stripe Checkout** preparada para modo test. El objetivo es delegar el cobro en Stripe para no manejar datos de tarjeta en la web.
-- **Administración**: panel con **CRUD** de usuarios y artículos.
-- **Seguridad**: consultas preparadas (anti SQL-injection), contraseñas con
-  `password_hash()` (bcrypt) y migración automática, listas blancas en `ORDER BY`.
-- **Responsive**: sistema moderno con **Container Queries** y **`clamp()`**.
+### Desarrollo a medida
 
-## 📸 Capturas
+La tienda se desarrollo sin framework para practicar la construccion manual de una aplicacion web: paginas PHP, plantillas reutilizables, conexion a base de datos, sesiones, formularios y gestion de entidades.
 
-### Inicio
-| Escaparate React | Cabecera y menú | Cabecera |
-|---|---|---|
-| ![Escaparate React](screenshot/inicioreact.png) | ![Menú](screenshot/headermenu.png) | ![Cabecera](screenshot/header.png) |
+### Diseno visual
 
-| Pie de página |
-|---|
-| ![Footer](screenshot/footer.png) |
+Se creo una identidad visual artesanal y calida, con fondos suaves, tarjetas de producto, cabecera personalizada, footer y una portada mas moderna mediante un escaparate interactivo con React.
 
-### Tienda y compra
-| Catálogo de productos | Cesta | Pago (Stripe) |
-|---|---|---|
-| ![Catálogo](screenshot/listaproductos.png) | ![Cesta](screenshot/finalizar-compra.png) | ![Pago](screenshot/checkout.png) |
+### Header y menu
 
-| Método de pago | Resumen de la compra |
-|---|---|
-| ![Método de pago](screenshot/metododepago.png) | ![Compra](screenshot/sesion.png) |
+El menu se adapto para funcionar como eje de navegacion principal:
 
-### Área de cliente
-| Inicio de sesión | Registro | Contacto |
-|---|---|---|
-| ![Login](screenshot/iniciarsesion.png) | ![Registro](screenshot/formularioregistro.png) | ![Contacto](screenshot/contacto.png) |
+- Navegacion entre inicio, tienda, clases, talleres y contacto.
+- Submenus para categorias de producto.
+- Estado de usuario con inicio/cierre de sesion.
+- Iconos de apoyo visual.
+- Ajustes responsive para pantallas pequenas.
 
-### Panel de administración
-| Lista de usuarios | Modificar usuario |
-|---|---|
-| ![Usuarios](screenshot/adminusers.png) | ![Modificar usuario](screenshot/adminusersmodifica.png) |
+### Catalogo y carrito
 
-| Gestión de productos | Modificar producto | Añadir producto |
-|---|---|---|
-| ![Productos](screenshot/adminproductos.png) | ![Modificar producto](screenshot/adminproductomodifica.png) | ![Añadir producto](screenshot/añadirproducto.png) |
+El catalogo se organiza por categorias y productos. El carrito permite anadir articulos, revisar cantidades y avanzar hacia el flujo de pedido.
 
-### Responsive
-| Vista tablet | Menú móvil | Menú móvil (selección) |
-|---|---|---|
-| ![Tablet](screenshot/tabletinicio.png) | ![Menú móvil](screenshot/movilmenu.png) | ![Menú móvil selección](screenshot/movilmenuseleccion.png) |
+### Administracion
 
-## 📁 Estructura del repositorio
+El proyecto incluye pantallas CRUD para gestionar usuarios y articulos, pensadas como panel de administracion basico para el mantenimiento de la tienda.
 
+### Seguridad y datos
+
+Se separaron las credenciales en archivos no versionados, se anadieron plantillas de configuracion y se trabajo la autenticacion con `password_hash()` y migracion de contrasenas antiguas.
+
+### React
+
+React se usa de forma puntual como mejora visual en la portada. No sustituye el flujo PHP de la tienda, sino que actua como escaparate interactivo que dirige a las paginas existentes.
+
+### Stripe
+
+La integracion con Stripe Checkout esta preparada/en desarrollo para modo test. El objetivo es delegar el pago en Stripe y no manejar datos de tarjeta dentro de la aplicacion.
+
+## Capturas
+
+### Inicio con escaparate React
+
+![Inicio con escaparate React](screenshots/inicio-react.png)
+
+### Cabecera y menu
+
+![Cabecera y menu](screenshots/header-menu.png)
+
+### Cabecera
+
+![Cabecera](screenshots/header.png)
+
+### Catalogo de productos
+
+![Catalogo de productos](screenshots/lista-productos.png)
+
+### Cesta
+
+![Cesta](screenshots/finalizar-compra.png)
+
+### Metodo de pago
+
+![Metodo de pago](screenshots/metodo-pago.png)
+
+### Checkout
+
+![Checkout](screenshots/checkout.png)
+
+### Area de cliente
+
+![Inicio de sesion](screenshots/iniciar-sesion.png)
+
+### Registro
+
+![Registro](screenshots/formulario-registro.png)
+
+### Contacto
+
+![Contacto](screenshots/contacto.png)
+
+### Panel de administracion - usuarios
+
+![Panel de usuarios](screenshots/admin-usuarios.png)
+
+### Panel de administracion - productos
+
+![Panel de productos](screenshots/admin-productos.png)
+
+### Anadir producto
+
+![Anadir producto](screenshots/anadir-producto.png)
+
+### Responsive tablet
+
+![Responsive tablet](screenshots/tablet-inicio.png)
+
+### Menu movil
+
+![Menu movil](screenshots/movil-menu.png)
+
+### Menu movil desplegado
+
+![Menu movil desplegado](screenshots/movil-menu-seleccion.png)
+
+### Footer
+
+![Footer](screenshots/footer.png)
+
+## Estructura del repositorio
+
+```text
+Obradoirokreativo-PHP/
+├─ README.md
+├─ .gitignore
+├─ code/
+│  ├─ css/
+│  │  ├─ base.css
+│  │  ├─ menu.css
+│  │  ├─ cabecera.css
+│  │  ├─ carrusel.css
+│  │  ├─ paginas.css
+│  │  ├─ pie.css
+│  │  └─ tablas-formularios.css
+│  ├─ js/
+│  │  ├─ funciones.js
+│  │  └─ react-escaparate.js
+│  ├─ templates/
+│  │  ├─ inicioPagina.php
+│  │  ├─ finPagina.php
+│  │  ├─ nav.php
+│  │  ├─ header.php
+│  │  ├─ carrusel.php
+│  │  └─ footer.php
+│  ├─ img/
+│  └─ *.php
+├─ docs/
+│  ├─ configuracion-local.md
+│  ├─ css-organizacion-notas.md
+│  ├─ decisiones-tecnicas.md
+│  ├─ estructura-repositorio.md
+│  └─ seguridad-y-privacidad.md
+└─ screenshots/
+   ├─ inicio-react.png
+   ├─ header-menu.png
+   ├─ lista-productos.png
+   ├─ finalizar-compra.png
+   ├─ checkout.png
+   ├─ contacto.png
+   └─ movil-menu.png
 ```
-code/
-  css/             Hojas por secciones (base, menu, cabecera, pie, layouts, tablas...)
-  js/              JavaScript (menú, carrito AJAX, validaciones)
-  templates/       Plantillas PHP reutilizables (inicioPagina, finPagina, nav, ...)
-  img/             Imágenes de la web
-  *.php            Páginas (index, tienda, catálogos, cesta, pago, admin, ...)
-screenshot/       Capturas usadas en este README
-README.md
-```
 
-## 🚀 Puesta en marcha (local)
+## Puesta en marcha local
 
 1. Clona el repositorio.
-2. Copia las plantillas de configuración y rellénalas:
+2. Copia las plantillas de configuracion y rellena tus datos:
+
    ```bash
    cp code/config.example.php code/config.php
    cp code/configStripe.example.php code/configStripe.php
    ```
-3. Crea la base de datos e importa las tablas (`user`, `articulo`, `carritodecompra`, `pedido`).
-4. Sirve la carpeta `code/` con un servidor PHP (Apache/XAMPP o `php -S`).
 
-> Para activar **Stripe**, el servidor debe permitir conexiones salientes
-> a `api.stripe.com` (el hosting gratuito de InfinityFree las bloquea; usa un hosting que
-> las permita, como Render o Railway).
+3. Crea una base de datos MySQL e importa las tablas necesarias (`user`, `articulo`, `carritodecompra`, `pedido`).
+4. Sirve la carpeta `code/` con Apache/XAMPP o un servidor PHP local.
+5. Abre `index.php` desde el servidor local.
 
----
+> Para activar Stripe, el servidor debe permitir conexiones salientes a `api.stripe.com`. Algunos hostings gratuitos bloquean esas conexiones.
 
-## 📄 Licencia
+## Documentacion
 
-Proyecto con fines educativos.
+- [Configuracion local](docs/configuracion-local.md)
+- [Decisiones tecnicas](docs/decisiones-tecnicas.md)
+- [Estructura del repositorio](docs/estructura-repositorio.md)
+- [Seguridad y privacidad](docs/seguridad-y-privacidad.md)
+- [Notas de organizacion del CSS](docs/css-organizacion-notas.md)
+
+## Nota sobre el proyecto
+
+Este repositorio esta enfocado a mostrar una version de tienda online desarrollada a medida con PHP y MySQL. No pretende competir con una solucion CMS como WordPress/WooCommerce, sino demostrar la implementacion manual de funcionalidades habituales de una tienda online.
+
+## Licencia
+
+Proyecto con fines educativos y de portfolio.
