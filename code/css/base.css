@@ -70,6 +70,59 @@ nav + h5{
 	color: #2f5536;
 }
 
+/* ===========================================================
+   Banner de aviso: web formativa (visible en todas las paginas)
+   =========================================================== */
+.demo-banner{
+	position: sticky;
+	top: 0;
+	z-index: 2000;                       /* por encima del menu (1001) */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 6px 16px;
+	padding: 8px clamp(12px, 3vw, 24px);
+	background: linear-gradient(90deg, #1f3d26, #2f5536 45%, #1f3d26);
+	color: #fffaf2;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.82rem;
+	letter-spacing: 0.02em;
+	text-align: center;
+	border-bottom: 2px solid #c7a96b;
+	box-shadow: 0 4px 14px rgba(31, 61, 38, 0.3);
+}
+.demo-banner-badge{
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	background: #c7a96b;
+	color: #1f3d26;
+	font-size: 0.68rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	padding: 3px 10px;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.demo-banner-text{ font-weight: 500; }
+.demo-banner-link{
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	color: #e9d3a8;
+	font-weight: 600;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(233, 211, 168, 0.5);
+	transition: color 0.25s ease, border-color 0.25s ease;
+	white-space: nowrap;
+}
+.demo-banner-link:hover{
+	color: #fffaf2;
+	border-color: #fffaf2;
+}
+
 /* Logo pequeno (usado en algunas secciones de contenido) */
 img.logo{
 	width: 50px;
