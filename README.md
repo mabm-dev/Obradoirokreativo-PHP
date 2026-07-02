@@ -22,6 +22,7 @@ Incluye:
 - Formularios de registro, login, carrito y administracion.
 - Plantillas reutilizables para cabecera, menu, carrusel y footer.
 - Capturas optimizadas del resultado final.
+- Esquema de la base de datos con datos de ejemplo (`database.sql`).
 - Documentacion tecnica del proyecto.
 
 No incluye:
@@ -44,7 +45,7 @@ No incluye:
 - React 18 para el escaparate de portada.
 - Bootstrap.
 - Font Awesome.
-- Stripe Checkout preparado para integracion en modo test.
+- Stripe Checkout integrado en modo test.
 
 ## Partes principales del trabajo
 
@@ -84,7 +85,7 @@ React se usa de forma puntual como mejora visual en la portada. No sustituye el 
 
 ### Stripe
 
-La integracion con Stripe Checkout esta preparada/en desarrollo para modo test. El objetivo es delegar el pago en Stripe y no manejar datos de tarjeta dentro de la aplicacion.
+La tienda integra Stripe Checkout en modo test, probado de extremo a extremo en el hosting: la cesta crea la sesion de pago en el servidor (cURL a la API de Stripe), el cobro se realiza en la pagina alojada de Stripe y, al volver, la aplicacion verifica el pago contra la API y registra el pedido. Los datos de tarjeta nunca tocan la aplicacion.
 
 ## Capturas
 
@@ -114,6 +115,7 @@ La integracion con Stripe Checkout esta preparada/en desarrollo para modo test. 
 Obradoirokreativo-PHP/
 ├─ README.md
 ├─ .gitignore
+├─ database.sql
 ├─ code/
 │  ├─ css/
 │  │  ├─ base.css
@@ -159,11 +161,30 @@ Obradoirokreativo-PHP/
    cp code/configStripe.example.php code/configStripe.php
    ```
 
-3. Crea una base de datos MySQL e importa las tablas necesarias (`user`, `articulo`, `carritodecompra`, `pedido`).
+3. Crea una base de datos MySQL vacia e importa [`database.sql`](database.sql)
+   (incluye las 4 tablas con sus claves foraneas, un admin y un cliente de prueba,
+   y productos de muestra):
+
+   ```bash
+   mysql -u root -p tu_base_de_datos < database.sql
+   ```
+
 4. Sirve la carpeta `code/` con Apache/XAMPP o un servidor PHP local.
 5. Abre `index.php` desde el servidor local.
+6. Entra con `Administrador` / `admin123` (admin) o `demo@demo.com` / `demo123` (cliente).
 
-> Para activar Stripe, el servidor debe permitir conexiones salientes a `api.stripe.com`. Algunos hostings gratuitos bloquean esas conexiones.
+### Probar el pago con Stripe (modo test)
+
+1. En el panel de Stripe, con el **modo de prueba** activado, copia tus claves desde
+   *Desarrolladores -> Claves de API* y pegalas en `code/configStripe.php`.
+2. Anade productos a la cesta y pulsa "Finalizar compra".
+3. En la pagina de Stripe paga con la tarjeta de prueba `4242 4242 4242 4242`
+   (caducidad futura, CVC cualquiera). El cobro ficticio aparece en el panel de
+   Stripe, en *Pagos*.
+
+> La sesion de pago se crea por cURL desde el servidor y el pago se verifica
+> consultando la API al volver (sin webhooks), por lo que funciona incluso en
+> hostings gratuitos que bloquean las peticiones entrantes de servicios externos.
 
 ## Documentacion
 
