@@ -2,19 +2,19 @@
 -- database.sql  -  Esquema de la base de datos de Obradoiro Kreativo
 -- (MySQL / MariaDB, utf8mb4)
 --
--- Estructura exportada de la base de datos real (MariaDB 11.4,
--- phpMyAdmin) con cuatro ajustes deliberados respecto a produccion:
+-- Estructura de las 4 tablas (MariaDB / MySQL) con cuatro mejoras
+-- respecto al esquema original del proyecto:
 --
---   1. pedido.Usuario y carritodecompra.Usuario se amplian a
---      varchar(100) para igualar a user.Email: con los tamanos
---      originales (20/25) los emails largos rompen la clave
---      foranea al crear el pedido en el registro.
+--   1. pedido.Usuario y carritodecompra.Usuario son varchar(100)
+--      para igualar a user.Email: con los tamanos originales
+--      (20/25) los emails largos rompian la clave foranea al
+--      crear el pedido en el registro.
 --   2. Las columnas del pago con tarjeta de `pedido` admiten NULL
 --      (pertenecen al checkout antiguo, sustituido por Stripe) y
 --      Enabled/Total tienen DEFAULT: asi las INSERT parciales del
 --      codigo funcionan tambien en MySQL con modo estricto.
---   3. user.Address usa utf8mb4 (la tabla real arrastra una
---      collation cp1250_bin accidental).
+--   3. user.Address usa utf8mb4 (el esquema original arrastraba
+--      una collation cp1250_bin accidental).
 --   4. Los productos de ejemplo llevan Img = '' porque la columna
 --      es un BLOB NOT NULL; las fotos se suben desde el panel de
 --      administracion (FormArticulo.php).
