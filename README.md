@@ -101,6 +101,20 @@ La tienda integra Stripe Checkout en modo test, probado de extremo a extremo en 
 
 ![Catalogo de productos](screenshots/lista-productos.png)
 
+### Proceso de compra (Stripe en modo test)
+
+La cesta con el resumen del pedido y el aviso de pago de prueba:
+
+![Cesta con resumen del pedido](screenshots/cesta-stripe.png)
+
+La pasarela de pago alojada por Stripe, con la tarjeta de prueba:
+
+![Pasarela de pago de Stripe](screenshots/pago-stripe.png)
+
+La confirmacion del pedido tras verificar el pago contra la API de Stripe:
+
+![Confirmacion del pedido](screenshots/confirmacion-pedido.png)
+
 ### Contacto
 
 ![Contacto](screenshots/contacto.png)
@@ -147,6 +161,9 @@ Obradoirokreativo-PHP/
    ├─ inicio-react.png
    ├─ header-menu.png
    ├─ lista-productos.png
+   ├─ cesta-stripe.png
+   ├─ pago-stripe.png
+   ├─ confirmacion-pedido.png
    ├─ contacto.png
    └─ movil-menu.png
 ```
