@@ -24,7 +24,7 @@
 --   2. Importa este archivo:
 --        mysql -u root -p obradoiro_kreativo < database.sql
 --      (o desde phpMyAdmin: pestana Importar)
---   3. Copia htdocs/config.example.php como htdocs/config.php y
+--   3. Copia code/config.example.php como code/config.php y
 --      pon el nombre de tu base de datos y credenciales.
 --
 -- Datos de ejemplo incluidos:
